@@ -26,9 +26,11 @@ const AdminPanel = () => {
     const handleDelete = (id) => {
           setUsers(users.filter(user => user.id !== id));
       };
+
+    const handleEdit = async (id) =>{
+        navigate("/edituser/"+id)
+    }
   
-  
-    // Filter users based on search
     const filteredUsers = users.filter(user =>
         user.firstName.toLowerCase().includes(search.trim().toLowerCase()) ||
         user.lastName.toLowerCase().includes(search.trim().toLowerCase()) ||
@@ -38,10 +40,13 @@ const AdminPanel = () => {
 
   
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-    <h2 className="text-xl font-semibold mb-4">User List</h2>
+    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-2">
 
-    {/* Search Bar */}
+    <div className="flex justify-between my-4">
+    <h2 className="text-xl font-semibold mb-4">User List</h2>
+    <button onClick={()=>navigate("/createuser")} className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition">Create new user</button>
+    </div>
+
     <input
       type="text"
       placeholder="Search users..."
@@ -50,7 +55,6 @@ const AdminPanel = () => {
       className="w-full p-2 border rounded-md mb-4"
     />
 
-    {/* User Table */}
     <div className="overflow-x-auto">
       <table className="min-w-full border rounded-md">
         <thead>
@@ -69,7 +73,9 @@ const AdminPanel = () => {
                 <td className="px-4 py-2">{user.email}</td>
                 <td className="px-4 py-2">{user.phone}</td>
                 <td className="px-4 py-2 text-center">
-                  <button className="text-blue-500 hover:underline mr-2">Edit</button>
+                  <button className="text-blue-500 hover:underline mr-2" 
+                          onClick={()=> handleEdit(user.id)}
+                  >Edit</button>
                   <button onClick={()=>handleDelete(user.id)} className="text-red-500 hover:underline">Delete</button>
                 </td>
               </tr>

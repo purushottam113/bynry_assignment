@@ -15,7 +15,7 @@ const GoogleMap = () => {
 
   return (
     <APIProvider apiKey="AIzaSyCc_ox91OlYr4jwKFOKcady4iDNe_uwNx8">
-      <p className="">{name}</p>
+      <p className="mx-auto bg-black text-white">{name + "`s map address"}</p>
       <Map
         className='w-screen h-screen'
         defaultCenter={{lat, lng}}

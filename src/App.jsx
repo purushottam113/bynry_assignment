@@ -8,6 +8,8 @@ import GoogleMap from './componants/GoogleMap'
 import AdminPanel from './componants/AdminPanel'
 import { Provider } from 'react-redux'
 import appStore from './utils/appStore'
+import EditUser from './componants/EditUser'
+import CreateUser from './componants/CreateUser'
 
 function App() {
 
@@ -22,7 +24,8 @@ function App() {
         <Route path='/profile/:userid' element= {<Profile/>} />
         <Route path='/map' element= {<GoogleMap/>} />
         <Route path='/admin' element= {<AdminPanel/>} />
-
+        <Route path='/edituser/:userid' element= {<EditUser/>} />
+        <Route path='/createuser' element= {<CreateUser/>} />
       </Routes>
     </BrowserRouter>
     </Provider>
