@@ -51,9 +51,9 @@ Get Users: https://dummyjson.com/users
 
 Get User by ID: https://dummyjson.com/users/:id
 
-Add User (Local Only)
+Add User : 'https://dummyjson.com/users/add'
 
-Update User (Local Only)
+Update User : 'https://dummyjson.com/users/:id' 
 
 Delete User (Local Only)
 
