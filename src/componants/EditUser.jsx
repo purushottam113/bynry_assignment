@@ -24,18 +24,14 @@ const EditUser = () => {
   });
 
   const {userid} = useParams();
-  console.log(userid)
-
   const isLogin = useSelector((store)=> store.admin);
   const navigate = useNavigate();
 
   const handleEdit = async () => {
-    console.log("handledit")
     try {
         const res = await axios.put(BASE_URL+ "/users/"+ userid,{
                             user
                             })
-        console.log(res)
         if(res?.status == 200){
           setError(false);
           return setUserUpdate(true)
@@ -48,7 +44,6 @@ const EditUser = () => {
 
   const fetchUser = async ()=> {
     const res = await axios.get(BASE_URL +  "/users/" + userid);
-    console.log(res?.data)
     const {image, firstName, lastName, age, email, phone} = res?.data;
     const {country, state, postalcode} = res?.data?.address;
     const {name, title, department} = res?.data?.company;

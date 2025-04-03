@@ -11,9 +11,12 @@ const AdminPanel = () => {
     const isLogin = useSelector((store)=> store.admin);
 
     const fetchedUsers = async () => {
+      try {
         const res = await axios.get(BASE_URL+ "/users");
-        console.log(res?.data?.users);
         setUsers(res?.data?.users);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     useEffect(()=>{

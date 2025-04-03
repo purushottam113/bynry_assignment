@@ -22,19 +22,20 @@ const Profile = () => {
     const {userid} = useParams();
 
     const fetchProfile = async ()=> {
+      try {
         const res = await axios.get(BASE_URL +  "/users/" + userid);
-        console.log(res?.data)
         const {image, firstName, lastName, age, email, phone} = res?.data;
         const {country, state, postalcode} = res?.data?.address;
         const {name, title, department} = res?.data?.company;
         setUser({image, firstName, lastName, age, email, country, state, postalcode, name, title, department, phone});
+      } catch (error) {
+        console.log(error)
       }
+    }
 
       useEffect(()=>{
         fetchProfile();
       },[]);
-
-    //   if(user["firstName"] === "") return
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

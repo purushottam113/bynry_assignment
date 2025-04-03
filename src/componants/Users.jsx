@@ -8,6 +8,7 @@ const Users = () => {
     const [users, setUsers] = useState([]);
 
     const fetchedUsers = async () => {
+      try {
         const res = await axios.get(BASE_URL+ "/users");
         const tempUsers = res?.data?.users.map(({
                                           id, firstName, lastName, age,  image, email, phone,
@@ -17,7 +18,11 @@ const Users = () => {
                                             id, firstName, lastName, age: age.toString(), image, state, country, lat, lng, name, title, email, phone
                                           }));
         setUsers(tempUsers);
-    };
+      } catch (error) {
+        console.log(error);
+      }
+    };       
+
 
     
     useEffect(()=>{

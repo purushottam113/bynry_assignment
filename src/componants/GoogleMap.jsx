@@ -9,8 +9,6 @@ const GoogleMap = () => {
   const lng = parseFloat(searchParams.get("lng"));
   const name = searchParams.get("name");
 
-  console.log(lat+","+ lng)
-
   if(!lat || !lng) return <p>Loading...</p>
 
   return (

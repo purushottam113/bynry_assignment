@@ -8,7 +8,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log("isLogin: "+isLogin)
   const handleLogout = ()=> {
     dispatch(adminLogin(false));
   }

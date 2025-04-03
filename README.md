@@ -1,12 +1,84 @@
-# React + Vite
+Frontend Case Study - Profile Viewer with Map Integration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Project Overview
 
-Currently, two official plugins are available:
+This project is a React Vite web application that allows users to view a list of profiles and explore their locations interactively on a map. The admin panel includes functionalities to add, update, and delete profiles (local state only, no server changes) with authentication for admin access.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+React Vite – Fast frontend framework
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tailwind CSS – Styling & responsive design
+
+Axios – API requests
+
+Redux Toolkit – State management
+
+Google Maps API – Interactive map integration
+
+DummyJSON API – Mock user data
+
+✨ Features
+
+Profile Display: Shows a list of profiles with name, photo, and description.
+
+Interactive Map: Displays the location of selected profiles using Google Maps.
+
+CRUD Operations: Add, edit, and delete profiles (local state only, no backend changes).
+
+Admin Panel with Authentication: Only authenticated admins can modify profiles.
+
+Search & Filter: Find profiles by name, age, comapny name, designation, location.
+
+Responsive Design: Works on mobile and desktop.
+
+
+🏗️ Installation & Setup
+
+1. Install Dependencies
+        npm install
+
+2. Run the development server
+        npm run dev
+
+📡 API Integration
+
+This project uses DummyJSON API for profile data. Since DummyJSON does not store changes permanently, CRUD operations are handled locally using Redux Toolkit.
+
+API Endpoints Used:
+
+Get Users: https://dummyjson.com/users
+
+Get User by ID: https://dummyjson.com/users/:id
+
+Add User (Local Only)
+
+Update User (Local Only)
+
+Delete User (Local Only)
+
+🔒 Admin Authentication
+
+Basic authentication is implemented using hardcoded credentials:
+
+Username: admin
+
+Password: admin
+
+Only logged-in admins can access the Admin Panel to modify profiles.
+
+Admins can logout securely.
+
+📍 Google Maps Integration
+
+Uses Google Maps API to display user locations.
+
+Clicking the "Summary" button on a profile shows the address on the map.
+
+🎯 Future Enhancements
+
+Persist CRUD operations using a real backend (MongoDB/Express.js).
+
+Implement role-based access control for different user types.
+
+Improve UI with more animations and UX enhancements.
