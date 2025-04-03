@@ -6,11 +6,14 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import Profile from './componants/Profile'
 import GoogleMap from './componants/GoogleMap'
 import AdminPanel from './componants/AdminPanel'
+import { Provider } from 'react-redux'
+import appStore from './utils/appStore'
 
 function App() {
 
   return (
     <>
+    <Provider store={appStore}>
     <BrowserRouter>
       <Navbar/>
       <Routes>
@@ -22,6 +25,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </Provider>
     </>
   )
 }

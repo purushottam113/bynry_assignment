@@ -1,10 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../utils/constant';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 const AdminPanel = () => {
     const [search, setSearch] = useState("");
     const [users, setUsers] = useState([]);
+    const navigate = useNavigate();
+    const isLogin = useSelector((store)=> store.admin);
 
     const fetchedUsers = async () => {
         const res = await axios.get(BASE_URL+ "/users");
@@ -13,6 +17,9 @@ const AdminPanel = () => {
     };
 
     useEffect(()=>{
+        if(!isLogin){
+          return navigate("/");
+        }
         fetchedUsers();
     },[]);
 
