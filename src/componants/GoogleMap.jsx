@@ -19,7 +19,7 @@ const GoogleMap = () => {
       <Map
         className='w-screen h-screen'
         defaultCenter={{lat, lng}}
-        defaultZoom={10}
+        defaultZoom={5}
         mapId="YOUR_MAP_ID" // Optional: for cloud-based map styling
       >
         <AdvancedMarker position={{lat, lng}} />

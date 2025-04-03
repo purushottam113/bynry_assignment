@@ -13,7 +13,7 @@ const Card = ({users}) => {
               <img src={image} alt="img" />
               <p className="font-semibold">{firstName + " "+ lastName + ", "+ age}</p>
             </div>
-            <p className='px-2'>🏠 {country}</p>
+            <p className='px-2'>🏠 {state+", "+country}</p>
             <p className='px-2'>{`💻 ${title} at ${name}`}</p>
         </div>
         <button onClick={()=>navigate(`/map?lat=${lat}&lng=${lng}&name=${firstName + " " + lastName}`)}
